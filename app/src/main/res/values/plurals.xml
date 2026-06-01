@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="saved_species">
+        <item quantity="one">%d saved species</item>
+        <item quantity="other">%d saved species</item>
+    </plurals>
+    <plurals name="sightings_total">
+        <item quantity="one">%d total</item>
+        <item quantity="other">%d total</item>
+    </plurals>
+</resources>

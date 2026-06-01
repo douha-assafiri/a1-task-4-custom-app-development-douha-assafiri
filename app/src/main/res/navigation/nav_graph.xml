@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/exploreFragment">
+
+    <fragment
+        android:id="@+id/exploreFragment"
+        android:name="com.example.scout.ui.explore.ExploreFragment"
+        android:label="@string/nav_explore"
+        tools:layout="@layout/fragment_explore">
+        <action
+            android:id="@+id/action_explore_to_detail"
+            app:destination="@id/speciesDetailFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/searchFragment"
+        android:name="com.example.scout.ui.search.SearchFragment"
+        android:label="@string/nav_search"
+        tools:layout="@layout/fragment_search">
+        <action
+            android:id="@+id/action_search_to_detail"
+            app:destination="@id/speciesDetailFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/logSightingFragment"
+        android:name="com.example.scout.ui.log.LogSightingFragment"
+        android:label="@string/nav_log"
+        tools:layout="@layout/fragment_log_sighting">
+        <argument android:name="prefillName" app:argType="string" android:defaultValue="" />
+        <argument android:name="prefillTaxonId" app:argType="integer" android:defaultValue="-1" />
+        <argument android:name="prefillIconicTaxon" app:argType="string" android:defaultValue="" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/favouritesFragment"
+        android:name="com.example.scout.ui.favourites.FavouritesFragment"
+        android:label="@string/nav_favourites"
+        tools:layout="@layout/fragment_favourites">
+        <action
+            android:id="@+id/action_favourites_to_detail"
+            app:destination="@id/speciesDetailFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.example.scout.ui.profile.ProfileFragment"
+        android:label="@string/nav_profile"
+        tools:layout="@layout/fragment_profile">
+        <action
+            android:id="@+id/action_profile_to_sightings"
+            app:destination="@id/sightingsFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/speciesDetailFragment"
+        android:name="com.example.scout.ui.detail.SpeciesDetailFragment"
+        android:label="Species Detail"
+        tools:layout="@layout/fragment_species_detail">
+        <argument
+            android:name="taxonId"
+            app:argType="long" />
+        <action
+            android:id="@+id/action_detail_to_log"
+            app:destination="@id/logSightingFragment" />
+        <action
+            android:id="@+id/action_detail_to_detail"
+            app:destination="@id/speciesDetailFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/sightingsFragment"
+        android:name="com.example.scout.ui.sightings.SightingsFragment"
+        android:label="@string/nav_sightings"
+        tools:layout="@layout/fragment_sightings">
+        <action
+            android:id="@+id/action_sightings_to_detail"
+            app:destination="@id/speciesDetailFragment" />
+    </fragment>
+
+</navigation>
